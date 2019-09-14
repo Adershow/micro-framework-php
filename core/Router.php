@@ -2,13 +2,6 @@
 class Router
 {
     private $request;
-    private $supportedHttpMethods = array(
-        "GET",
-        "POST",
-        "PUT",
-        "PATCH",
-        "DELETE",
-    );
 
     public function __construct(IRequest $request)
     {
@@ -52,12 +45,15 @@ class Router
         $this->testEquality($uri, $url, $func);
     }
 
+    public function defaultRequestHandler()
+    {
+        header("{$this->request->serverProtocol} 404 Not Found");
+    }
+
     private function testEquality($uri, $url, $func)
     {
         if ($uri === $url) {
             $func($this->request);
-        } else {
-            $this->defaultRequestHandler();
         }
     }
 
@@ -70,11 +66,6 @@ class Router
         }
         $uri = implode('/', $array);
         return $uri;
-    }
-
-    private function defaultRequestHandler()
-    {
-        header("{$this->request->serverProtocol} 404 Not Found");
     }
 
     private function formatRoot()
