@@ -1,6 +1,9 @@
 <?php
 $router = new Router(new Request);
-
+/*
+Here you put your routes
+Examples down below
+ */
 $router->get('/profile/domain/:id', function ($req) {
     $data = $req->getQueryParams();
     Router::redirect('profile', 'domain', $data);
