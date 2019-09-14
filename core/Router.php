@@ -82,6 +82,7 @@ class Router
         $dispatch = new $controller($controller_name, $action);
         if (method_exists($controller, $action)) {
             $dispatch->$action($data);
+            die();
         } else {
             die('That method does not exist in the controller \"' . $controller_name . '\"');
         }
