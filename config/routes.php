@@ -4,27 +4,27 @@ $router = new Router(new Request);
 Here you put your routes
 Examples down below
  */
-$router->get('/profile/domain/:id', function ($req) {
+$router->get('/index/domain/:id', function ($req) {
     $data = $req->getQueryParams();
-    Router::redirect('profile', 'domain', $data);
+    Router::redirect('index', 'domain', $data);
 });
-$router->post('/profile/postTest', function ($req) {
+$router->post('/index/postTest', function ($req) {
     $data = $req->getBody();
-    Router::redirect('profile', 'postTest', $data);
+    Router::redirect('index', 'postTest', $data);
 });
-$router->put('/profile/putTest/:id', function ($req) {
+$router->put('/index/putTest/:id', function ($req) {
     $data = $req->getBody();
     $data = array_merge($data, $req->getQueryParams());
-    Router::redirect('profile', 'putTest', $data);
+    Router::redirect('index', 'putTest', $data);
 });
-$router->patch('/profile/patchTest/:id', function ($req) {
+$router->patch('/index/patchTest/:id', function ($req) {
     $data = $req->getBody();
     $data = array_merge($data, $req->getQueryParams());
-    Router::redirect('profile', 'patchTest', $data);
+    Router::redirect('index', 'patchTest', $data);
 });
-$router->delete('/profile/deleteTest/:id', function ($req) {
+$router->delete('/index/deleteTest/:id', function ($req) {
     $data = $req->getQueryParams();
-    Router::redirect('profile', 'deleteTest', $data);
+    Router::redirect('index', 'deleteTest', $data);
 });
 
 $router->defaultRequestHandler();

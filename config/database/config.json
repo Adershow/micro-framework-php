@@ -1,0 +1,10 @@
+{
+  "database": {
+    "CONNECTION": "mysql",
+    "HOST": "127.0.0.1",
+    "PORT": "5432",
+    "DATABASE_NAME": "mydb",
+    "USERNAME": "root",
+    "PASSWORD": "root"
+  }
+}

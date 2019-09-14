@@ -1,5 +1,5 @@
 <?php
-class profile
+class index
 {
     public function domain($data = [])
     {

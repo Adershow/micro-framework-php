@@ -13,6 +13,7 @@ class Router
         $uri = $this->formatRoot();
         $uri = $this->formatRoute($uri);
         $url = $this->formatRoute($url);
+
         $this->testEquality($uri, $url, $func);
     }
 
@@ -60,7 +61,6 @@ class Router
     private function formatRoute($data)
     {
         $array = explode("/", $data);
-
         for ($i = 3; $i < count($array); $i++) {
             $array[$i] = "";
         }
